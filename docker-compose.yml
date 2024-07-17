@@ -1,0 +1,31 @@
+version: '3.7'
+services:
+  api:
+    container_name: api
+    build:
+      context: .
+      dockerfile: './Dockerfile'
+    logging:
+      driver: 'json-file'
+      options:
+        max-size: '10m'
+    ports:
+      - '8080:8080'
+    depends_on:
+      - mysql
+  mysql:
+    image: mysql:8.0
+    hostname: mysql
+    container_name: mysql
+    ports:
+      - '3306:3306'
+    volumes:
+      - ./mysql-data:/var/lib/mysql
+      - ./mysql-config:/etc/mysql/conf.d
+    command: --default-authentication-plugin=mysql_native_password --port=3306
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: carpooling
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+      USER: 1000

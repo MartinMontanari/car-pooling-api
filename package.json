@@ -1,0 +1,24 @@
+{
+  "name": "car-pooling-challenge",
+  "version": "1.0.0",
+  "description": "car pooling api",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js"
+  },
+  "author": "Martin Montanari",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "ip": "^1.1.8",
+    "joi": "^17.10.2",
+    "mysql2": "^3.6.1",
+    "sequelize": "^6.33.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}

@@ -1,0 +1,9 @@
+/node_modules
+node_modules
+/mysql-data
+mysql-data
+/mysql-config
+mysql-config
+
+.env
+/.env
